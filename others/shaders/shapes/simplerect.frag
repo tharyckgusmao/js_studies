@@ -10,11 +10,11 @@ void main(){
     vec3 color = vec3(1.);
 
 //simple form
-    // float left = step(0.1,st.x); //if(x<=0.1)
-    // float bottom = step(0.1,st.y); //if(y<=0.1)
-    // float top = step(0.1,1.0 - st.y); // if( y>=0.9)
-    // float right = step(0.1,1.0 - st.x); // if(x>= 0.9)
-    // color = vec3(right * bottom * top * left); // and in if
+    float left = step(0.1,st.x); //if(x<=0.1)
+    float bottom = step(0.1,st.y); //if(y<=0.1)
+    float top = step(0.1,1.0 - st.y); // if( y>=0.9)
+    float right = step(0.1,1.0 - st.x); // if(x>= 0.9)
+    color = vec3(right * bottom * top * left); // and in if
 
     //Step vector form
     // vec2 bl = step(vec2(0.1),st);
@@ -23,8 +23,14 @@ void main(){
 
 
     // smoothstep
-    vec2 bl = smoothstep(0.,0.1,st.x);
-    color = vec3(bl);
+    // vec2 bl = vec2(smoothstep(0.,0.1,st));
+    // vec2 tr = vec2(smoothstep(0.,0.1,1.-st));
+    // color = vec3(bl.x * bl.y * tr.x * tr.y);
+
+
+    // //Floor
+    // vec2 bl = vec2(floor(0.1));
+    // color = vec3(bl.x);
 
 
 

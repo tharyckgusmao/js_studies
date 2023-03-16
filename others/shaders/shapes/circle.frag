@@ -6,7 +6,7 @@ uniform vec2 u_resolution;
 
 float circleShape(vec2 position, float radius) {
 
-    return step(radius, length(vec2(0.5) - position));
+    return step(radius, length(vec2(0.5,0.5) - position));
 
 }
 
